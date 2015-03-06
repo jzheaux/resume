@@ -21,7 +21,7 @@ public class Responsibility {
 	@SequenceGenerator(sequenceName="SEQ", name="seq")
 	private Long id;
 		
-	@Column
+	@Column(length=400)
 	private String description;
 	
 	@ManyToOne

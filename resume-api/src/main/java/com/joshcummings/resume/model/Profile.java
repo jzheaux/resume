@@ -61,6 +61,9 @@ public class Profile {
 	@Column(name = "GITHUB_HANDLE")
 	private String githubHandle;
 
+	@Column
+	private String blog;
+	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "profile")
 	private Set<Resume> resumes = new HashSet<Resume>();
 
@@ -122,7 +125,7 @@ public class Profile {
 		for ( int i = 0; i < email.length(); i++ ) {
 			char ch = email.charAt(i);
 			if ( ch >= 48 && ch <= 97 + 25 ) {
-				sb.append((char)(( ch - 47 ) % 75) + 48);
+				sb.append((char)((( ch - 47 ) % 75) + 48));
 			} else {
 				sb.append(ch);
 			}
@@ -144,7 +147,7 @@ public class Profile {
 		for ( int i = 0; i < phoneNumber.length(); i++ ) {
 			char ch = phoneNumber.charAt(i);
 			if ( ch >= 48 && ch <= 97 + 25 ) {
-				sb.append((char)(( ch - 47 ) % 75) + 48);
+				sb.append((char)((( ch - 47 ) % 75) + 48));
 			} else {
 				sb.append(ch);
 			}
@@ -203,5 +206,13 @@ public class Profile {
 
 	public void addResume(Resume resume) {
 		resumes.add(resume);
+	}
+
+	public String getBlog() {
+		return blog;
+	}
+	
+	public void setBlog(String blog) {
+		this.blog = blog;
 	}
 }

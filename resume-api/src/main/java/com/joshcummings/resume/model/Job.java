@@ -21,7 +21,7 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlTransient;
 
 @NamedQueries({
-	@NamedQuery(name="jobsByResume", query="FROM Job j WHERE j.resume.id = :id"),
+	@NamedQuery(name="jobsByResume", query="FROM Job j WHERE j.resume.id = :id ORDER BY j.startDate DESC"),
 })
 @Entity
 @Table(name="job")
@@ -108,5 +108,11 @@ public class Job {
 
 	public void setResume(Resume resume) {
 		this.resume = resume;
+	}
+
+	public void addResponsibilities(String description) {
+		Responsibility r = new Responsibility();
+		r.setDescription(description);
+		addResponsibilities(r);
 	}
 }

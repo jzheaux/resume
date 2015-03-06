@@ -1,0 +1,66 @@
+/*C5*/SET SCHEMA PUBLIC
+drop table degree if exists
+drop table job if exists
+drop table profile if exists
+drop table responsibility if exists
+drop table resume if exists
+drop table skill if exists
+create table degree (id bigint not null, AREA_OF_STUDY varchar(255), degree varchar(255), graduation bigint, institution varchar(255), RESUME_ID bigint, primary key (id))
+create table job (id bigint not null, company varchar(255), endDate bigint, position varchar(255), startDate bigint, RESUME_ID bigint, primary key (id))
+create table profile (id bigint not null, address varchar(255), blog varchar(255), city varchar(255), email varchar(255), FACEBOOK_HANDLE varchar(255), FIRST_NAME varchar(255), GITHUB_HANDLE varchar(255), LAST_NAME varchar(255), LINKEDIN_HANDLE varchar(255), PHONE_NUMBER varchar(255), profession varchar(255), state varchar(255), TWITTER_HANDLE varchar(255), primary key (id))
+create table responsibility (id bigint not null, description varchar(400), JOB_ID bigint, primary key (id))
+create table resume (id bigint not null, objective varchar(255), PROFILE_ID bigint, primary key (id))
+create table skill (id bigint not null, proficiency varchar(255), skill varchar(255), years double, RESUME_ID bigint, primary key (id))
+alter table degree add constraint FK_mj3p4lej510uqr500q5f4cd3g foreign key (RESUME_ID) references resume
+alter table job add constraint FK_6615jnsmke530w611swo12y2n foreign key (RESUME_ID) references resume
+alter table responsibility add constraint FK_cothm5m3d37cjjg50q3nsgkmr foreign key (JOB_ID) references job
+alter table resume add constraint FK_9vcuyyrraixk8w522ej0pvca4 foreign key (PROFILE_ID) references profile
+alter table skill add constraint FK_ckuiwcvtp36cb5y3g1y5lxab5 foreign key (RESUME_ID) references resume
+create sequence SEQ start with 1
+INSERT INTO PROFILE VALUES(50,'5498 W Sondrio Street','http://tech.joshuacummings.com','Herriman','josh.cummings@gmail.com','jzheaux','Josh','jzheaux','Cummings','innovativejavaarchitect','801-556-2751','Principal Software Engineer','UT','jzheaux')
+INSERT INTO RESUME VALUES(100,'Apply my extensive experience in software engineering in general and Java application development specifically to the role of part-time technical consultant.',50)
+INSERT INTO DEGREE VALUES(150,'Mathematics','Bachelors',1051728733708,'University of Utah',100)
+INSERT INTO DEGREE VALUES(151,'Computer Science','Bachelors',1051728733708,'University of Utah',100)
+INSERT INTO JOB VALUES(200,'iCentris',1222800733709,'Senior Software Engineer',1054493533709,100)
+INSERT INTO RESPONSIBILITY VALUES(250,'Train and support the development organization on in-house modules, third-party technologies, and the Java platform in general. This included assisting in bug hunts as well as code consultation.',200)
+INSERT INTO RESPONSIBILITY VALUES(251,'Design and Develop fast and fault-tolerant ecommerce software for the Direct Sales industry.',200)
+INSERT INTO RESPONSIBILITY VALUES(252,'Lead the Production Support team of eight engineers, performing code reviews, pair programming, and developing software for tenured clients.',200)
+INSERT INTO RESPONSIBILITY VALUES(253,'Research and develop application framework components for use by the rest ofthe development organization (30-40 engineers), particularly for the MVC layer in function and ecommerce in industry.',200)
+INSERT INTO JOB VALUES(201,'LDS Church',1293825133709,'Senior Software Engineer',1220295133709,100)
+INSERT INTO RESPONSIBILITY VALUES(254,'Develop key application framework components for use by dozens of small project teams, particularly in the areas of Web Services, SSO, and static analysis, maintaining a consistent release cycle, a comprehensive corpus of documentation, and clear cohesion for each component.',201)
+INSERT INTO RESPONSIBILITY VALUES(255,'Train and support dozens of small projects on use of in-house modules, third-party technologies, and the Java platform in general. This included helping teams track down bugs, code consultation, and holding formal presentations and workshops.',201)
+INSERT INTO RESPONSIBILITY VALUES(256,'Consult dozens of small projects (about 300 engineers across the org) on specifications, design decisions, and build vs. buy.',201)
+INSERT INTO JOB VALUES(202,'Deem/Rearden Commerce',1393617133709,'Principle Software Engineer',1293738733709,100)
+INSERT INTO RESPONSIBILITY VALUES(257,'Lead a team of six engineers in the process, performing code reviews, pair programming, and coordinating with other teams to deliver a solid product.',202)
+INSERT INTO RESPONSIBILITY VALUES(258,'Sit on Architectural Board that articulates and evangelizes good coding standards and practices.',202)
+INSERT INTO RESPONSIBILITY VALUES(259,'Architect, Design, and Develop mission-critical web applications and platform components for the organization\u2019s authentication and security needs; interface  with both internal development teams and external third-parties for SAML and other SSO requirements; maintain excellent standards of documentation and support to other devs.',202)
+INSERT INTO JOB VALUES(203,'Neumont University',1425671533709,'Faculty Member',1379962333708,100)
+INSERT INTO RESPONSIBILITY VALUES(260,'Provide instruction, guidance, and management on project courses where students design an entire software product from beginning to end.',203)
+INSERT INTO RESPONSIBILITY VALUES(261,'Develop curriculum for our Java-based courses, including labs, exams, assignments, and other assessments.',203)
+INSERT INTO RESPONSIBILITY VALUES(262,'Consult with other teachers with regard to the seven courses Neumont offers that are based in Java. Ensure that faculty Java coding practices are current and up-to-date.',203)
+INSERT INTO RESPONSIBILITY VALUES(263,'In classes of 30-40 students, teach students Java at a collegiate level from novice to expert. Specifically, teach those who have no previous coding experience how to code and, via the course model, elevate students to a level of expertise that easily surpasses typical college graduates.',203)
+INSERT INTO SKILL VALUES(300,'Advanced','Eclipse',10.0E0,100)
+INSERT INTO SKILL VALUES(301,'Advanced','Maven',7.0E0,100)
+INSERT INTO SKILL VALUES(302,'Academic','C++',0.5E0,100)
+INSERT INTO SKILL VALUES(303,'Intermediate','ReST',5.0E0,100)
+INSERT INTO SKILL VALUES(304,'Beginner','Scala',1.0E0,100)
+INSERT INTO SKILL VALUES(305,'Advanced','Spring',7.0E0,100)
+INSERT INTO SKILL VALUES(306,'Intermediate','Tomcat',10.0E0,100)
+INSERT INTO SKILL VALUES(307,'Intermediate','Perforce',3.0E0,100)
+INSERT INTO SKILL VALUES(308,'Beginner','Ivy',0.5E0,100)
+INSERT INTO SKILL VALUES(309,'Beginner','SOAP',2.0E0,100)
+INSERT INTO SKILL VALUES(310,'Advanced','Javascript',7.0E0,100)
+INSERT INTO SKILL VALUES(311,'Expert','Java',15.0E0,100)
+INSERT INTO SKILL VALUES(312,'Intermediate','C',2.0E0,100)
+INSERT INTO SKILL VALUES(313,'Intermediate','PHP',5.0E0,100)
+INSERT INTO SKILL VALUES(314,'Beginner','Ant',1.0E0,100)
+INSERT INTO SKILL VALUES(315,'Beginner','Groovy',1.0E0,100)
+INSERT INTO SKILL VALUES(316,'Beginner','Gradle',0.5E0,100)
+INSERT INTO SKILL VALUES(317,'Intermediate','Web App Security',2.0E0,100)
+INSERT INTO SKILL VALUES(318,'Intermediate','Spring Security',3.0E0,100)
+INSERT INTO SKILL VALUES(319,'Beginner','Git',1.5E0,100)
+INSERT INTO SKILL VALUES(320,'Intermediate','Hibernate',4.0E0,100)
+INSERT INTO SKILL VALUES(321,'Intermediate','JIRA',7.0E0,100)
+INSERT INTO SKILL VALUES(322,'Intermediate','SVN',3.0E0,100)
+COMMIT
+ALTER SEQUENCE PUBLIC.SEQ RESTART WITH 7

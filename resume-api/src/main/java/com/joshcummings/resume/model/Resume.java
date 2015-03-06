@@ -97,4 +97,12 @@ public class Resume {
 		degrees.add(degree);
 		degree.setResume(this);
 	}
+
+	public void addSkill(String proficiency, String skill, double years) {
+		Skill s = new Skill();
+		s.setProficiency(proficiency);
+		s.setSkill(skill);
+		s.setYears(years);
+		addSkill(s);
+	}
 }
