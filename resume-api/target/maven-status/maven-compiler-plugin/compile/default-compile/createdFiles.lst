@@ -1,8 +1,0 @@
-com/joshcummings/resume/model/Job.class
-com/joshcummings/resume/model/ResumeNotFoundException.class
-com/joshcummings/resume/model/Responsibility.class
-com/joshcummings/resume/service/ResumeRestService.class
-com/joshcummings/resume/model/Resume.class
-com/joshcummings/resume/model/Profile.class
-com/joshcummings/resume/model/Skill.class
-com/joshcummings/resume/model/Degree.class
