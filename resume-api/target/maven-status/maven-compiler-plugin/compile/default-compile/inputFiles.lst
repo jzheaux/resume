@@ -1,0 +1,8 @@
+/home/jzheaux/dev/git/resume-api/src/main/java/com/joshcummings/resume/model/Job.java
+/home/jzheaux/dev/git/resume-api/src/main/java/com/joshcummings/resume/model/ResumeNotFoundException.java
+/home/jzheaux/dev/git/resume-api/src/main/java/com/joshcummings/resume/model/Responsibility.java
+/home/jzheaux/dev/git/resume-api/src/main/java/com/joshcummings/resume/service/ResumeRestService.java
+/home/jzheaux/dev/git/resume-api/src/main/java/com/joshcummings/resume/model/Resume.java
+/home/jzheaux/dev/git/resume-api/src/main/java/com/joshcummings/resume/model/Skill.java
+/home/jzheaux/dev/git/resume-api/src/main/java/com/joshcummings/resume/model/Profile.java
+/home/jzheaux/dev/git/resume-api/src/main/java/com/joshcummings/resume/model/Degree.java

@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+li {
+	list-style-type: none;
+}
+
+#content {
+	margin: auto;
+	width: 800px;
+}
+
+.email {
+	background: url('../images/email.png') no-repeat;
+	padding: 0 0 0 25px;
+}
+
+.phone {
+	background: url('../images/phone.png') no-repeat;
+	padding: 0 0 2px 25px;
+}
+
+.skype {
+	background: url('../images/skype.png') no-repeat;
+	padding: 0 0 2px 25px;
+}
+
+.location {
+	background: url('../images/location.png') no-repeat;
+	padding: 0 0 2px 25px;
+}
+
+.facebook {
+	background: url('../images/facebook.png') no-repeat;
+	padding: 0 0 2px 25px;
+}
+
+.linkedin {
+	background: url('../images/linkedin.png') no-repeat;
+	padding: 0 0 2px 25px;
+}
